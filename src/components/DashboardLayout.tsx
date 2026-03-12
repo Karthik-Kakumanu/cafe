@@ -60,7 +60,7 @@ const navSections: NavSection[] = [
   {
     title: "Settings",
     items: [
-      { label: "Café Info", path: "/admin/settings", icon: <Store className="h-4 w-4" /> },
+      { label: "Cafe Info", path: "/admin/settings", icon: <Store className="h-4 w-4" /> },
       { label: "Billing", path: "/admin/billing", icon: <CreditCard className="h-4 w-4" /> },
     ],
   },
@@ -85,19 +85,19 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
     ? user.user_metadata.full_name.split(" ").map((n: string) => n[0]).join("").slice(0, 2).toUpperCase()
     : "AM";
 
-  const userName = user?.user_metadata?.full_name || "Café Admin";
+  const userName = user?.user_metadata?.full_name || "Cafe Admin";
 
   return (
     <div className="h-screen flex">
       {/* Sidebar */}
       <aside className="w-[220px] bg-card border-r flex flex-col shrink-0 sticky top-0 h-screen overflow-y-auto">
-        {/* Logo + Café */}
+        {/* Logo + Cafe */}
         <div className="p-5 pb-4 border-b">
           <Link to="/admin/dashboard" className="flex items-center gap-2.5">
-            <div className="h-[34px] w-[34px] rounded-[9px] bg-primary flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-sm font-display">R</span>
+            <div className="h-5 w-16 shrink-0 overflow-hidden rounded-sm">
+              <img src="/logo.png" alt="Revistra" className="h-full w-full object-cover" />
             </div>
-            <span className="text-lg font-display font-bold">Revistra</span>
+            <span className="text-lg font-display font-bold">Revistra Admin</span>
           </Link>
           <div className="mt-3 bg-background rounded-lg p-2.5 border">
             <div className="flex items-center gap-2">
@@ -107,7 +107,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
                 <div className="flex items-center gap-1.5 mt-0.5">
                   <div className={`w-1.5 h-1.5 rounded-full ${isTrialActive ? "bg-warning" : "bg-success"}`} />
                   <span className="text-[10px] text-warning font-medium">
-                    Trial — {trialDaysRemaining} days
+                    Trial - {trialDaysRemaining} days
                   </span>
                 </div>
               </div>

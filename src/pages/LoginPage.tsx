@@ -19,7 +19,7 @@ const LoginPage = () => {
   const [fullName, setFullName] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Auto-redirect if already logged in and café resolved
+  // Auto-redirect if already logged in and cafe resolved
   useEffect(() => {
     if (user && cafeId) {
       setCafeId(cafeId);
@@ -57,8 +57,8 @@ const LoginPage = () => {
   if (authLoading) {
     return (
       <div className="h-screen flex items-center justify-center bg-background">
-        <div className="h-10 w-10 rounded-[9px] bg-primary flex items-center justify-center animate-pulse">
-          <span className="text-primary-foreground font-bold text-sm font-display">R</span>
+        <div className="h-8 w-24 overflow-hidden rounded-sm animate-pulse">
+          <img src="/logo.png" alt="Revistra" className="h-full w-full object-cover" />
         </div>
       </div>
     );
@@ -69,12 +69,14 @@ const LoginPage = () => {
       <div className="w-full max-w-md animate-fade-in">
         <div className="bg-background border rounded-2xl shadow-sm p-8">
           <div className="text-center mb-8">
-            <div className="inline-flex h-11 w-11 items-center justify-center rounded-[9px] bg-primary mb-3">
-              <span className="text-primary-foreground font-bold text-lg font-display">R</span>
+            <div className="mb-3 flex items-center justify-center gap-3">
+              <div className="h-6 w-20 overflow-hidden rounded-sm">
+                <img src="/logo.png" alt="Revistra" className="h-full w-full object-cover" />
+              </div>
+              <h1 className="text-2xl font-display">Revistra Admin</h1>
             </div>
-            <h1 className="text-2xl font-display">Revistra</h1>
             <p className="text-sm text-muted-foreground mt-1 font-body">
-              {mode === "login" ? "Sign in to your café dashboard" : "Create your café admin account"}
+              {mode === "login" ? "Sign in to your cafe dashboard" : "Create your cafe admin account"}
             </p>
           </div>
 
@@ -114,7 +116,7 @@ const LoginPage = () => {
                 <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
                 <Input
                   type="password"
-                  placeholder="••••••••"
+                  placeholder="********"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="pl-10 h-10 text-sm rounded-xl"

@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Revistra Brand System */
+    --background: 0 0% 100%;           /* #FFFFFF */
+    --foreground: 10 14% 21%;           /* #3C2F2F Espresso */
+
+    --card: 0 0% 96.5%;                /* #F6F6F6 Cream */
+    --card-foreground: 10 14% 21%;     /* #3C2F2F */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 10 14% 21%;
+
+    --primary: 342 75% 45%;            /* #C71C4B Ruby Red */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 0 0% 96.5%;           /* Cream */
+    --secondary-foreground: 10 14% 21%;
+
+    --muted: 0 0% 93%;
+    --muted-foreground: 10 5% 45%;
+
+    --accent: 342 75% 45%;             /* Ruby Red */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 72% 51%;          /* #DC2626 */
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 71% 45%;            /* #16A34A */
+    --warning: 38 92% 50%;             /* #F59E0B */
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 342 75% 45%;
+
+    --radius: 0.625rem;
+
+    --sidebar-bg: 0 0% 96.5%;
+    --sidebar-foreground: 10 14% 21%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-active: 342 75% 45%;
+    --sidebar-hover: 0 0% 94%;
+    --sidebar-muted: 10 5% 45%;
+
+    --navbar-bg: 0 0% 100%;
+    --navbar-border: 0 0% 90%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'DM Sans', sans-serif;
+  }
+  h1, h2, h3 {
+    font-family: 'DM Serif Display', serif;
+  }
+}
+
+@layer utilities {
+  .sidebar-item-active {
+    @apply bg-primary text-primary-foreground font-semibold rounded-[9px];
+  }
+  .sidebar-item {
+    @apply text-muted-foreground hover:bg-muted/60 hover:text-foreground rounded-[9px] transition-colors;
+  }
+  .font-display {
+    font-family: 'DM Serif Display', serif;
+  }
+  .font-body {
+    font-family: 'DM Sans', sans-serif;
+  }
+}

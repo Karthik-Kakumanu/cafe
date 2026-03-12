@@ -1,0 +1,1 @@
+UPDATE public.profiles SET cafe_id = '2' WHERE user_id = '8f49b19a-4a5d-4db1-a112-8f79711deb97';

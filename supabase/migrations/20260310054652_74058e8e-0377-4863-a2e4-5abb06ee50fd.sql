@@ -1,0 +1,1 @@
+INSERT INTO public.profiles (user_id, full_name, cafe_id) VALUES ('b5994317-52d5-4279-9766-82789d3d443f', 'Test Admin', '1') ON CONFLICT (user_id) DO NOTHING;
